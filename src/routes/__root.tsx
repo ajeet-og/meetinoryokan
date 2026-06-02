@@ -80,6 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#1A2E44" },
       { property: "og:site_name", content: "Shanti Guest House" },
       { name: "twitter:card", content: "summary_large_image" },
+      { title: "Lovable App" },
+      { property: "og:title", content: "Lovable App" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "description", content: "Sakura Stay is a premium Japanese guest house website for Indian homestays, designed for Japanese travelers." },
+      { property: "og:description", content: "Sakura Stay is a premium Japanese guest house website for Indian homestays, designed for Japanese travelers." },
+      { name: "twitter:description", content: "Sakura Stay is a premium Japanese guest house website for Indian homestays, designed for Japanese travelers." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/34ed35aa-13e2-4cbf-ae7d-85b9c4efd1d8/id-preview-404fb918--bce548eb-ba57-410c-aee9-04affce56eef.lovable.app-1780389036585.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/34ed35aa-13e2-4cbf-ae7d-85b9c4efd1d8/id-preview-404fb918--bce548eb-ba57-410c-aee9-04affce56eef.lovable.app-1780389036585.png" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       {
