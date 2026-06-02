@@ -34,7 +34,7 @@ export function Hero() {
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo/40 via-indigo/15 to-washi" />
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo/30 via-indigo/40 to-indigo/80" />
 
       <div className="absolute left-6 md:left-16 lg:left-24 bottom-20 md:bottom-28 right-6 md:right-auto max-w-3xl">
         <motion.span
