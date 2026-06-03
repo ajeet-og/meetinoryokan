@@ -81,6 +81,7 @@ function Index() {
         </main>
         <Footer />
         <WhatsAppFloat />
+        <MusicPlayer />
       </div>
     </I18nProvider>
   );
