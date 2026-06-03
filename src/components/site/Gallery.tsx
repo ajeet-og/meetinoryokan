@@ -2,14 +2,13 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+import g1 from "@/assets/guest-rooftop.jpg.asset.json";
+import g2 from "@/assets/guest-lounge.jpg.asset.json";
+import g3 from "@/assets/guest-saree.jpg.asset.json";
+import g4 from "@/assets/guest-van.jpg.asset.json";
+import g5 from "@/assets/guest-host.jpg.asset.json";
 
-const images = [g1, g4, g2, g3, g6, g5];
+const images = [g1.url, g2.url, g3.url, g4.url, g5.url];
 
 export function Gallery() {
   const { tr } = useI18n();

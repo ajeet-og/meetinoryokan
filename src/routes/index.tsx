@@ -13,6 +13,7 @@ import { Location } from "@/components/site/Location";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsApp";
+import { MusicPlayer } from "@/components/site/MusicPlayer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -80,6 +81,7 @@ function Index() {
         </main>
         <Footer />
         <WhatsAppFloat />
+        <MusicPlayer />
       </div>
     </I18nProvider>
   );

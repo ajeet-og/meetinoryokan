@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useI18n } from "@/lib/i18n";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/gallery-4.jpg";
+import hero1 from "@/assets/guest-rooftop.jpg.asset.json";
+import hero2 from "@/assets/guest-saree.jpg.asset.json";
+import hero3 from "@/assets/guest-lounge.jpg.asset.json";
 
-const slides = [hero1, hero2, hero3];
+const slides = [hero1.url, hero2.url, hero3.url];
 
 export function Hero() {
   const { tr } = useI18n();
