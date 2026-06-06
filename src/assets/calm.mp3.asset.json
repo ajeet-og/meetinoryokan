@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "a8988b48-6922-40a9-9356-0c7013ad46d7",
+  "asset_id": "1497308c-5b01-4e33-9ead-0eadf7098fea",
   "project_id": "bce548eb-ba57-410c-aee9-04affce56eef",
-  "url": "/__l5e/assets-v1/a8988b48-6922-40a9-9356-0c7013ad46d7/calm.mp3",
-  "r2_key": "a/v1/bce548eb-ba57-410c-aee9-04affce56eef/a8988b48-6922-40a9-9356-0c7013ad46d7/calm.mp3",
-  "original_filename": "calm.mp3",
-  "size": 502535,
+  "url": "/__l5e/assets-v1/1497308c-5b01-4e33-9ead-0eadf7098fea/raga.mp3",
+  "r2_key": "a/v1/bce548eb-ba57-410c-aee9-04affce56eef/1497308c-5b01-4e33-9ead-0eadf7098fea/raga.mp3",
+  "original_filename": "raga.mp3",
+  "size": 720710,
   "content_type": "audio/mpeg",
-  "created_at": "2026-06-03T10:36:02Z"
+  "created_at": "2026-06-06T03:27:38Z"
 }

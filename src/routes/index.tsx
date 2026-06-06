@@ -18,14 +18,14 @@ import { MusicPlayer } from "@/components/site/MusicPlayer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Shanti 燦 — インドの日本人ゲストハウス | Premium Japanese Guest House India" },
+      { title: "Meeti No Ryokan 燦 — インドの日本人ゲストハウス | Japanese Guest House Delhi" },
       {
         name: "description",
         content:
-          "日本人旅行者のためのプレミアム・ゲストハウス。安心の日本語サポート、清潔な客室、和食朝食、空港送迎。デリーを拠点にインド旅行をサポートします。",
+          "日本人旅行者のためのアットホームなゲストハウス。安心の日本語サポート、清潔な客室、家庭料理、空港送迎。デリー・Preet Viharを拠点にインド旅行をサポートします。",
       },
-      { property: "og:title", content: "Shanti 燦 — インドの日本人ゲストハウス" },
-      { property: "og:description", content: "日本人旅行者のための安心・快適なゲストハウス。インド・デリー。" },
+      { property: "og:title", content: "Meeti No Ryokan 燦 — インドの日本人ゲストハウス" },
+      { property: "og:description", content: "日本人旅行者のための安心・快適なゲストハウス。インド・デリー Preet Vihar。" },
       { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
     ],
@@ -44,16 +44,16 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LodgingBusiness",
-          name: "Shanti Guest House India",
-          description: "Premium Japanese guest house in New Delhi, India.",
+          name: "Meeti No Ryokan",
+          description: "Japanese-style guest house in Preet Vihar, New Delhi, India.",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "A-24, Vasant Vihar",
+            streetAddress: "D-40, Preet Vihar",
             addressLocality: "New Delhi",
-            postalCode: "110057",
+            postalCode: "110092",
             addressCountry: "IN",
           },
-          telephone: "+91-987-654-3210",
+          telephone: "+91-98680-17189",
           priceRange: "₹₹",
         }),
       },

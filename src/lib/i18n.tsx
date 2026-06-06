@@ -20,7 +20,7 @@ export const t: Dict = {
   },
   "hero.cta1": { ja: "予約する", en: "Book Now" },
   "hero.cta2": { ja: "お問い合わせ", en: "Contact Us" },
-  "hero.vertical": { ja: "SAFE & TRANQUIL STAY IN INDIA", en: "SAFE & TRANQUIL STAY IN INDIA" },
+  "hero.vertical": { ja: "MEETI NO RYOKAN · DELHI", en: "MEETI NO RYOKAN · DELHI" },
 
   "about.kicker": { ja: "OMOTENASHI", en: "OMOTENASHI" },
   "about.title": { ja: "私たちが選ばれる理由", en: "Why guests choose us" },
@@ -37,22 +37,25 @@ export const t: Dict = {
   },
   "about.r3.t": { ja: "聖地へのアクセス", en: "Access to sacred sites" },
   "about.r3.d": {
-    ja: "ヨガ教室、寺院、地元の隠れた名所へのプライベートツアーを手配いたします。",
-    en: "We arrange private tours to yoga schools, temples and hidden local spots.",
+    ja: "寺院、ガート、地元の隠れた名所へのプライベートツアーを手配いたします。",
+    en: "We arrange private tours to temples, ghats and hidden local spots.",
+  },
+  "about.r4.t": { ja: "無料の文化体験", en: "Free cultural experiences" },
+  "about.r4.d": {
+    ja: "サリーやクルタ・パジャマ、ターバンなどの伝統衣装の着付け体験、ヘナタトゥー(メヘンディ)など、インドの文化を無料で体験していただけます。",
+    en: "Free cultural exchange activities — try traditional Indian dress (saree, kurta-pajama, turban) and enjoy henna (mehndi) tattoo sessions with our family.",
   },
 
   "rooms.kicker": { ja: "YOUR SANCTUARY", en: "YOUR SANCTUARY" },
   "rooms.title": { ja: "客室のご案内", en: "Accommodation" },
   "rooms.note": { ja: "全室エアコン・高速Wi-Fi完備", en: "All rooms feature AC and high-speed Wi-Fi" },
-  "rooms.cta": { ja: "詳しく見る", en: "View Details" },
-  "rooms.night": { ja: "/ 一泊", en: "/ night" },
 
-  "room.deluxe.t": { ja: "デラックススイート", en: "Deluxe Suite" },
-  "room.deluxe.d": { ja: "キングサイズベッド、専用テラス、大理石のバスルーム完備。", en: "King bed, private terrace, marble bathroom." },
+  "room.deluxe.t": { ja: "デラックスルーム", en: "Deluxe Room" },
+  "room.deluxe.d": { ja: "明るく広々とした客室。ゆったりとくつろげる、心地よい滞在を。", en: "Bright and spacious — a warm, relaxing room for your stay." },
   "room.twin.t": { ja: "スタンダードツイン", en: "Standard Twin" },
   "room.twin.d": { ja: "長期滞在にも最適な、機能的で温かみのある広々とした客室。", en: "Spacious and warm, ideal for long stays." },
-  "room.single.t": { ja: "シングルルーム", en: "Single Room" },
-  "room.single.d": { ja: "バックパッカーや一人旅の方へ。安全性と安らぎを重視した空間。", en: "For solo travelers and backpackers. Safe and serene." },
+  "room.single.t": { ja: "ダブルルーム", en: "Double Room" },
+  "room.single.d": { ja: "落ち着いた雰囲気のダブルベッドルーム。一人旅やカップルにも。", en: "A calm double room — perfect for solo travelers or couples." },
 
   "fac.kicker": { ja: "HOSPITALITY", en: "HOSPITALITY" },
   "fac.title": { ja: "安心のための充実した設備", en: "Facilities for peace of mind" },
@@ -65,15 +68,14 @@ export const t: Dict = {
   "fac.sec": { ja: "セキュリティ", en: "Security" },
   "fac.clean": { ja: "毎日清掃", en: "Daily Cleaning" },
 
-  "stats.kicker": { ja: "TRUSTED BY TRAVELERS", en: "TRUSTED BY TRAVELERS" },
-  "stats.title": { ja: "数字で見る信頼", en: "Trust by the numbers" },
+  "stats.kicker": { ja: "HAPPY GUESTS", en: "HAPPY GUESTS" },
+  "stats.title": { ja: "幸せなゲストの数", en: "Happy guest's count" },
   "stats.s1": { ja: "年の運営実績", en: "Years of hosting" },
   "stats.s2": { ja: "日本人ゲスト", en: "Japanese guests" },
   "stats.s3": { ja: "満足度", en: "Guest satisfaction" },
-  "stats.s4": { ja: "都市での展開", en: "Cities in India" },
 
-  "gallery.kicker": { ja: "MOMENTS", en: "MOMENTS" },
-  "gallery.title": { ja: "ゲストハウスの風景", en: "Inside our guest house" },
+  "gallery.kicker": { ja: "FAMILY", en: "FAMILY" },
+  "gallery.title": { ja: "私たちの大切な家族", en: "Our beautiful family" },
 
   "attr.kicker": { ja: "NEARBY", en: "NEARBY" },
   "attr.title": { ja: "周辺の見どころ", en: "Local attractions" },
@@ -84,8 +86,8 @@ export const t: Dict = {
 
   "loc.kicker": { ja: "FIND US", en: "FIND US" },
   "loc.title": { ja: "アクセス", en: "Find us" },
-  "loc.addr": { ja: "A-24, Vasant Vihar, New Delhi 110057, India", en: "A-24, Vasant Vihar, New Delhi 110057, India" },
-  "loc.airport": { ja: "インディラ・ガンディー国際空港より車で約25分", en: "About 25 min by car from Indira Gandhi Intl. Airport" },
+  "loc.addr": { ja: "D-40, Preet Vihar, New Delhi 110092, India", en: "D-40, Preet Vihar, New Delhi 110092, India" },
+  "loc.airport": { ja: "インディラ・ガンディー国際空港より車で約45分", en: "About 45 min by car from Indira Gandhi Intl. Airport" },
 
   "contact.kicker": { ja: "GET IN TOUCH", en: "GET IN TOUCH" },
   "contact.title": { ja: "お問い合わせ・ご予約", en: "Reservations & inquiries" },
@@ -107,7 +109,7 @@ export const t: Dict = {
   },
   "footer.contact": { ja: "CONTACT", en: "CONTACT" },
   "footer.social": { ja: "SOCIAL", en: "SOCIAL" },
-  "footer.rights": { ja: "© 2026 SHANTI GUEST HOUSE INDIA. ALL RIGHTS RESERVED.", en: "© 2026 SHANTI GUEST HOUSE INDIA. ALL RIGHTS RESERVED." },
+  "footer.rights": { ja: "© 2026 MEETI NO RYOKAN. ALL RIGHTS RESERVED.", en: "© 2026 MEETI NO RYOKAN. ALL RIGHTS RESERVED." },
 };
 
 const Ctx = createContext<{ lang: Lang; setLang: (l: Lang) => void; tr: (k: keyof typeof t) => string }>({

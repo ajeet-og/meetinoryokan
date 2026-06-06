@@ -17,8 +17,8 @@ export function Location() {
         <Reveal className="lg:col-span-2">
           <div className="aspect-[16/10] w-full overflow-hidden border border-charcoal/10">
             <iframe
-              title="Map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=77.1450%2C28.5500%2C77.1800%2C28.5750&amp;layer=mapnik&amp;marker=28.5620%2C77.1590"
+              title="Map — D-40, Preet Vihar, New Delhi"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=77.2820%2C28.6280%2C77.3060%2C28.6440&amp;layer=mapnik&amp;marker=28.6360%2C77.2940"
               className="w-full h-full grayscale"
               loading="lazy"
             />
@@ -42,7 +42,7 @@ export function Location() {
               </div>
             </div>
             <a
-              href="https://maps.google.com/?q=Vasant+Vihar+New+Delhi"
+              href="https://maps.google.com/?q=D-40+Preet+Vihar+New+Delhi+110092"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-auto inline-flex justify-center bg-indigo text-washi px-6 py-3 text-[11px] tracking-[0.25em] uppercase hover:bg-gold transition-colors duration-500"

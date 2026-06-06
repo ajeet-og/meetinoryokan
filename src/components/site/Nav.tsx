@@ -22,8 +22,8 @@ export function Nav() {
         scrolled ? "bg-washi/85 backdrop-blur-md border-b border-charcoal/5" : ""
       }`}
     >
-      <a href="#top" className={`font-mincho text-xl tracking-[0.25em] uppercase ${scrolled ? "text-indigo" : "text-washi"}`}>
-        Shanti <span className="font-latin italic tracking-normal">/ 燦</span>
+      <a href="#top" className={`font-mincho text-base md:text-lg tracking-[0.22em] uppercase ${scrolled ? "text-indigo" : "text-washi"}`}>
+        Meeti No Ryokan <span className="font-latin italic tracking-normal">/ 燦</span>
       </a>
 
       <div className="flex items-center gap-6">
