@@ -77,8 +77,8 @@ export const t: Dict = {
   "gallery.kicker": { ja: "FAMILY", en: "FAMILY" },
   "gallery.title": { ja: "私たちの大切な家族", en: "Our beautiful family" },
 
-  "attr.kicker": { ja: "NEARBY", en: "NEARBY" },
-  "attr.title": { ja: "周辺の見どころ", en: "Local attractions" },
+  "attr.kicker": { ja: "DELHI", en: "DELHI" },
+  "attr.title": { ja: "デリーの観光名所", en: "Local attractions for tourists in Delhi" },
   "attr.km": { ja: "より", en: "from us" },
 
   "test.kicker": { ja: "GUEST VOICES", en: "GUEST VOICES" },
