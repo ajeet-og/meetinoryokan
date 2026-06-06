@@ -43,7 +43,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="block text-gold text-[10px] md:text-xs tracking-[0.4em] uppercase mb-6"
         >
-          Shanti · Premium Japanese Guest House India
+          Meeti No Ryokan · Premium Japanese Guest House India
         </motion.span>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

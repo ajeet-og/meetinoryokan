@@ -9,7 +9,7 @@ export function MusicPlayer() {
   useEffect(() => {
     const audio = new Audio(calm.url);
     audio.loop = true;
-    audio.volume = 0.25;
+    audio.volume = 0.12;
     ref.current = audio;
 
     const tryPlay = () => {

@@ -7,7 +7,6 @@ export function Stats() {
     { n: "15+", l: tr("stats.s1") },
     { n: "12,000+", l: tr("stats.s2") },
     { n: "98%", l: tr("stats.s3") },
-    { n: "6", l: tr("stats.s4") },
   ];
   return (
     <section className="py-24 md:py-28 px-6 md:px-8 bg-washi border-y border-charcoal/5">
@@ -18,7 +17,7 @@ export function Stats() {
             <h2 className="font-mincho text-3xl md:text-4xl text-indigo">{tr("stats.title")}</h2>
           </div>
         </Reveal>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-6">
           {stats.map((s, i) => (
             <Reveal key={s.l} delay={i * 0.08}>
               <div className="text-center">
