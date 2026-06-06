@@ -1,17 +1,63 @@
 import { useI18n } from "@/lib/i18n";
 import { Reveal } from "./Reveal";
-import taj from "@/assets/attr-taj.jpg";
-import varanasi from "@/assets/attr-varanasi.jpg";
-import rishikesh from "@/assets/attr-rishikesh.jpg";
-import lotus from "@/assets/attr-lotus.jpg";
 
 export function Attractions() {
   const { tr, lang } = useI18n();
   const items = [
-    { img: lotus, t: lang === "ja" ? "ロータス寺院" : "Lotus Temple", d: lang === "ja" ? "デリーを代表する蓮の花の寺院。" : "Delhi's iconic lotus-shaped temple.", km: "12 km" },
-    { img: taj, t: lang === "ja" ? "タージ・マハル" : "Taj Mahal", d: lang === "ja" ? "永遠の愛の象徴、世界遺産。" : "UNESCO heritage, symbol of love.", km: "220 km" },
-    { img: rishikesh, t: lang === "ja" ? "リシケシ" : "Rishikesh", d: lang === "ja" ? "ヨガと瞑想の聖地、ヒマラヤの麓。" : "Yoga capital at the foothills of the Himalayas.", km: "240 km" },
-    { img: varanasi, t: lang === "ja" ? "ヴァラナシ" : "Varanasi", d: lang === "ja" ? "ガンジス河畔の最も古い聖地のひとつ。" : "Ancient spiritual city on the Ganges.", km: "820 km" },
+    {
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Delhi_Red_fort.jpg/1280px-Delhi_Red_fort.jpg",
+      t: lang === "ja" ? "レッド・フォート(赤い城)" : "Red Fort",
+      d:
+        lang === "ja"
+          ? "ムガル帝国の壮大な赤砂岩の城塞。世界遺産。"
+          : "Mughal-era red sandstone fort, a UNESCO World Heritage site.",
+      km: "9 km",
+    },
+    {
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Humayun%27s_Tomb_-_The_Main_Tomb.jpg/1280px-Humayun%27s_Tomb_-_The_Main_Tomb.jpg",
+      t: lang === "ja" ? "フマーユーン廟" : "Humayun's Tomb",
+      d:
+        lang === "ja"
+          ? "タージ・マハルの原型と言われる優美なムガル建築。"
+          : "Elegant Mughal mausoleum — the architectural precursor to the Taj Mahal.",
+      km: "8 km",
+    },
+    {
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Qutab_Minar_mausoleum.jpg/800px-Qutab_Minar_mausoleum.jpg",
+      t: lang === "ja" ? "クトゥブ・ミナール" : "Qutub Minar",
+      d:
+        lang === "ja"
+          ? "高さ73mを誇る世界最古級の煉瓦造ミナレット。世界遺産。"
+          : "73-metre Indo-Islamic minaret, one of the world's tallest brick towers.",
+      km: "22 km",
+    },
+    {
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Lotus_Temple_in_New_Delhi_03-2016.jpg/1280px-Lotus_Temple_in_New_Delhi_03-2016.jpg",
+      t: lang === "ja" ? "ロータス寺院" : "Lotus Temple",
+      d:
+        lang === "ja"
+          ? "蓮の花を象った白大理石のバハーイー教礼拝堂。"
+          : "White marble Bahá'í House of Worship shaped like a lotus flower.",
+      km: "13 km",
+    },
+    {
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/New_Delhi_government_block_03-2016_img01.jpg/1280px-New_Delhi_government_block_03-2016_img01.jpg",
+      t: lang === "ja" ? "インド門" : "India Gate",
+      d:
+        lang === "ja"
+          ? "第一次大戦の戦没者を悼む42mの凱旋門。夕暮れが美しい。"
+          : "42-metre war memorial arch — beautiful at dusk along Rajpath.",
+      km: "10 km",
+    },
+    {
+      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Akshardham_Temple_Delhi_05-2016.jpg/1280px-Akshardham_Temple_Delhi_05-2016.jpg",
+      t: lang === "ja" ? "アクシャルダム寺院" : "Akshardham Temple",
+      d:
+        lang === "ja"
+          ? "精緻な彫刻と噴水ショーで知られる現代ヒンドゥー寺院。"
+          : "Modern Hindu temple complex famed for intricate carvings and fountain shows.",
+      km: "5 km",
+    },
   ];
 
   return (
@@ -24,7 +70,7 @@ export function Attractions() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((it, i) => (
             <Reveal key={it.t} delay={i * 0.08}>
               <div className="group cursor-pointer">

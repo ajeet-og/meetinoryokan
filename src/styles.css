@@ -43,10 +43,10 @@
 :root {
   --radius: 0.125rem;
 
-  --washi: oklch(0.974 0.012 85);
-  --indigo: oklch(0.27 0.05 250);
-  --gold: oklch(0.74 0.07 70);
-  --charcoal: oklch(0.28 0.005 250);
+  --washi: oklch(0.93 0.025 75);
+  --indigo: oklch(0.30 0.045 40);
+  --gold: oklch(0.62 0.12 55);
+  --charcoal: oklch(0.30 0.025 50);
 
   --background: var(--washi);
   --foreground: var(--charcoal);
@@ -75,11 +75,10 @@
   body {
     background-color: var(--color-background);
     background-image:
-      radial-gradient(circle at 12% 18%, oklch(0.85 0.16 25 / 0.22) 0px, transparent 38%),
-      radial-gradient(circle at 88% 12%, oklch(0.82 0.18 330 / 0.20) 0px, transparent 42%),
-      radial-gradient(circle at 78% 82%, oklch(0.85 0.18 140 / 0.18) 0px, transparent 44%),
-      radial-gradient(circle at 18% 88%, oklch(0.85 0.18 70 / 0.22) 0px, transparent 42%),
-      radial-gradient(circle at 50% 50%, oklch(0.80 0.18 290 / 0.12) 0px, transparent 55%);
+      radial-gradient(circle at 10% 15%, oklch(0.78 0.10 45 / 0.35) 0px, transparent 45%),
+      radial-gradient(circle at 90% 10%, oklch(0.70 0.11 30 / 0.28) 0px, transparent 48%),
+      radial-gradient(circle at 80% 85%, oklch(0.55 0.09 35 / 0.22) 0px, transparent 50%),
+      radial-gradient(circle at 15% 90%, oklch(0.72 0.09 70 / 0.30) 0px, transparent 48%);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans-jp);
