@@ -18,9 +18,7 @@ export function Nav() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
-      className={`fixed top-0 w-full z-50 px-6 md:px-10 py-5 flex justify-between items-center transition-all duration-500 ${
-        scrolled ? "bg-washi/85 backdrop-blur-md border-b border-charcoal/5" : ""
-      }`}
+      className="fixed top-0 w-full z-50 px-6 md:px-10 py-5 flex justify-between items-center bg-transparent transition-colors duration-500"
     >
       <a href="#top" className={`font-mincho text-base md:text-lg tracking-[0.22em] uppercase ${scrolled ? "text-indigo" : "text-washi"}`}>
         Meeti No Ryokan <span className="font-latin italic tracking-normal">/ 燦</span>
