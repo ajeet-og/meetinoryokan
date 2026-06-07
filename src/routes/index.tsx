@@ -7,7 +7,7 @@ import { Rooms } from "@/components/site/Rooms";
 import { Facilities } from "@/components/site/Facilities";
 import { Stats } from "@/components/site/Stats";
 import { Gallery } from "@/components/site/Gallery";
-import { Attractions } from "@/components/site/Attractions";
+
 import { Testimonials } from "@/components/site/Testimonials";
 import { Location } from "@/components/site/Location";
 import { Contact } from "@/components/site/Contact";
@@ -74,7 +74,7 @@ function Index() {
           <Facilities />
           <Stats />
           <Gallery />
-          <Attractions />
+          
           <Testimonials />
           <Location />
           <Contact />
