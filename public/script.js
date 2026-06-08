@@ -1,3 +1,13 @@
+/* Always start at the top on load, ignore stray hash that mobile browsers may restore */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('load', () => {
+  // If URL has no explicit user-clicked hash, force-scroll to top
+  if (!document.referrer || new URL(document.referrer).origin !== location.origin) {
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    window.scrollTo(0, 0);
+  }
+});
+
 /* ============== i18n ============== */
 const dict = {
   "nav.rooms": ["客室","Rooms"],
