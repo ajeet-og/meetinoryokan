@@ -92,7 +92,6 @@ function applyLang() {
   document.querySelectorAll('.lang-toggle button').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
-  renderTestimonials();
 }
 document.querySelectorAll('.lang-toggle button').forEach(b => {
   b.addEventListener('click', () => {
