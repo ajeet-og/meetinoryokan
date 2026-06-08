@@ -48,7 +48,7 @@ const dict = {
   "stats.s2": ["日本人ゲスト","Japanese guests"],
   "stats.s3": ["満足度","Guest satisfaction"],
   "gallery.kicker": ["FAMILY","FAMILY"],
-  "gallery.title": ["私たちの大切な家族","Our beautiful family"],
+  "gallery.title": ["私たちの大切な家族","Our beautiful japanese family"],
   "test.kicker": ["GUEST VOICES","GUEST VOICES"],
   "test.title": ["ゲストの声","What guests say"],
   "loc.kicker": ["FIND US","FIND US"],
