@@ -73,18 +73,11 @@ const dict = {
   "footer.rights": ["© 2026 MEETI NO RYOKAN. ALL RIGHTS RESERVED.","© 2026 MEETI NO RYOKAN. ALL RIGHTS RESERVED."]
 };
 
-const testimonialsData = {
-  ja: [
-    { name: "山田 美咲", from: "東京", text: "初めてのインド旅行で不安でしたが、日本語サポートが本当に心強かったです。食事も優しい味で、毎朝の和食に救われました。" },
-    { name: "佐藤 健太", from: "大阪", text: "一ヶ月の長期滞在で利用しました。スタッフの温かさと清潔感のあるお部屋で、まるで第二の我が家のように過ごせました。" },
-    { name: "田中 沙織", from: "京都", text: "ヨガリトリートでお世話になりました。リシケシへの手配も全て日本語で完璧。安心してインドを楽しめました。" }
-  ],
-  en: [
-    { name: "Misaki Yamada", from: "Tokyo", text: "My first trip to India felt safe thanks to the Japanese support. The gentle meals saved me — Japanese breakfast every morning was a blessing." },
-    { name: "Kenta Sato", from: "Osaka", text: "Stayed for a month. Warm staff, spotless rooms — it really did feel like my second home." },
-    { name: "Saori Tanaka", from: "Kyoto", text: "Came for a yoga retreat. They arranged everything to Rishikesh in Japanese. I could truly enjoy India with peace of mind." }
-  ]
-};
+const reviewImages = [
+  "/assets/review-1.jpg","/assets/review-2.jpg","/assets/review-3.jpg","/assets/review-4.jpg",
+  "/assets/review-5.jpg","/assets/review-6.jpg","/assets/review-7.jpg","/assets/review-8.jpg",
+  "/assets/review-9.jpg","/assets/review-10.jpg"
+];
 
 let lang = (new URLSearchParams(location.search).get('lang') || localStorage.getItem('lang') || 'ja');
 if (lang !== 'ja' && lang !== 'en') lang = 'ja';
