@@ -1,3 +1,13 @@
+/* Always start at the top on load, ignore stray hash that mobile browsers may restore */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('load', () => {
+  // If URL has no explicit user-clicked hash, force-scroll to top
+  if (!document.referrer || new URL(document.referrer).origin !== location.origin) {
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    window.scrollTo(0, 0);
+  }
+});
+
 /* ============== i18n ============== */
 const dict = {
   "nav.rooms": ["客室","Rooms"],
@@ -22,7 +32,7 @@ const dict = {
   "about.r3.t": ["聖地へのアクセス","Access to sacred sites"],
   "about.r3.d": ["寺院、ガート、地元の隠れた名所へのプライベートツアーを手配いたします。","We arrange private tours to temples, ghats and hidden local spots."],
   "about.r4.t": ["無料の文化体験","Free cultural experiences"],
-  "about.r4.d": ["サリーやクルタ・パジャマ、ターバンなどの伝統衣装の着付け体験、ヘナタトゥー(メヘンディ)など、インドの文化を無料で体験していただけます。","Free cultural exchange activities — try traditional Indian dress (saree, kurta-pajama, turban) and enjoy henna (mehndi) tattoo sessions with our family."],
+  "about.r4.d": ["伝統衣装(サリー、クルタ・パジャマ、ターバン)の着付け体験をお楽しみいただけます。また、ヘナタトゥー(メヘンディ)も無料でご体験いただけます。","Try traditional Indian dress — saree, kurta-pajama and turban — and we also do henna (mehndi) tattoos."],
   "rooms.kicker": ["YOUR SANCTUARY","YOUR SANCTUARY"],
   "rooms.title": ["客室のご案内","Accommodation"],
   "rooms.note": ["全室エアコン・高速Wi-Fi完備","All rooms feature AC and high-speed Wi-Fi"],
@@ -48,7 +58,7 @@ const dict = {
   "stats.s2": ["日本人ゲスト","Japanese guests"],
   "stats.s3": ["満足度","Guest satisfaction"],
   "gallery.kicker": ["FAMILY","FAMILY"],
-  "gallery.title": ["私たちの大切な家族","Our beautiful family"],
+  "gallery.title": ["私たちの大切な家族","Our beautiful japanese family"],
   "test.kicker": ["GUEST VOICES","GUEST VOICES"],
   "test.title": ["ゲストの声","What guests say"],
   "loc.kicker": ["FIND US","FIND US"],
@@ -73,18 +83,11 @@ const dict = {
   "footer.rights": ["© 2026 MEETI NO RYOKAN. ALL RIGHTS RESERVED.","© 2026 MEETI NO RYOKAN. ALL RIGHTS RESERVED."]
 };
 
-const testimonialsData = {
-  ja: [
-    { name: "山田 美咲", from: "東京", text: "初めてのインド旅行で不安でしたが、日本語サポートが本当に心強かったです。食事も優しい味で、毎朝の和食に救われました。" },
-    { name: "佐藤 健太", from: "大阪", text: "一ヶ月の長期滞在で利用しました。スタッフの温かさと清潔感のあるお部屋で、まるで第二の我が家のように過ごせました。" },
-    { name: "田中 沙織", from: "京都", text: "ヨガリトリートでお世話になりました。リシケシへの手配も全て日本語で完璧。安心してインドを楽しめました。" }
-  ],
-  en: [
-    { name: "Misaki Yamada", from: "Tokyo", text: "My first trip to India felt safe thanks to the Japanese support. The gentle meals saved me — Japanese breakfast every morning was a blessing." },
-    { name: "Kenta Sato", from: "Osaka", text: "Stayed for a month. Warm staff, spotless rooms — it really did feel like my second home." },
-    { name: "Saori Tanaka", from: "Kyoto", text: "Came for a yoga retreat. They arranged everything to Rishikesh in Japanese. I could truly enjoy India with peace of mind." }
-  ]
-};
+const reviewImages = [
+  "/assets/review-1.jpg","/assets/review-2.jpg","/assets/review-3.jpg","/assets/review-4.jpg",
+  "/assets/review-5.jpg","/assets/review-6.jpg","/assets/review-7.jpg","/assets/review-8.jpg",
+  "/assets/review-9.jpg","/assets/review-10.jpg"
+];
 
 let lang = (new URLSearchParams(location.search).get('lang') || localStorage.getItem('lang') || 'ja');
 if (lang !== 'ja' && lang !== 'en') lang = 'ja';
@@ -99,7 +102,6 @@ function applyLang() {
   document.querySelectorAll('.lang-toggle button').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
-  renderTestimonials();
 }
 document.querySelectorAll('.lang-toggle button').forEach(b => {
   b.addEventListener('click', () => {
@@ -155,33 +157,29 @@ document.querySelectorAll('.g-item').forEach(b => {
 });
 lb.addEventListener('click', () => { lb.hidden = true; lbImg.src = ''; });
 
-/* ============== TESTIMONIALS ============== */
-const tWrap = document.getElementById('testimonials');
+/* ============== REVIEWS slideshow (4 at a time, every 5s, prev/next) ============== */
+const revGrid = document.getElementById('reviews-grid');
 const tDots = document.getElementById('t-dots');
-let tIdx = 0, tInterval;
-function renderTestimonials() {
-  const items = testimonialsData[lang];
-  tWrap.innerHTML = items.map((it, k) => `
-    <div class="t-item ${k===0?'active':''}">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-text font-mincho">「${it.text}」</p>
-      <div class="t-name">${it.name}</div>
-      <div class="t-from">${it.from}</div>
-    </div>
-  `).join('');
-  tDots.innerHTML = items.map((_, k) => `<button class="t-dot ${k===0?'active':''}" data-i="${k}" aria-label="Testimonial ${k+1}"></button>`).join('');
-  tIdx = 0;
-  tDots.querySelectorAll('.t-dot').forEach(d => d.addEventListener('click', () => goT(+d.dataset.i)));
-  clearInterval(tInterval);
-  tInterval = setInterval(() => goT(tIdx + 1), 6500);
+const PER_PAGE = 4;
+const revPages = [];
+for (let i = 0; i < reviewImages.length; i += PER_PAGE) revPages.push(reviewImages.slice(i, i + PER_PAGE));
+let revIdx = 0, revTimer;
+function renderRevPage() {
+  const page = revPages[revIdx] || [];
+  revGrid.innerHTML = page.map(src => `<button class="rev-item" data-src="${src}"><img src="${src}" alt="Guest handwritten review" loading="lazy" /></button>`).join('');
+  tDots.querySelectorAll('.t-dot').forEach((d, k) => d.classList.toggle('active', k === revIdx));
+  revGrid.querySelectorAll('.rev-item').forEach(b => b.addEventListener('click', () => {
+    lbImg.src = b.dataset.src; lb.hidden = false;
+  }));
 }
-function goT(i) {
-  const items = tWrap.querySelectorAll('.t-item');
-  const dts = tDots.querySelectorAll('.t-dot');
-  tIdx = (i + items.length) % items.length;
-  items.forEach((el, k) => el.classList.toggle('active', k === tIdx));
-  dts.forEach((el, k) => el.classList.toggle('active', k === tIdx));
-}
+function goRev(i) { revIdx = (i + revPages.length) % revPages.length; renderRevPage(); resetRevTimer(); }
+function resetRevTimer() { clearInterval(revTimer); revTimer = setInterval(() => goRev(revIdx + 1), 5000); }
+tDots.innerHTML = revPages.map((_, k) => `<button class="t-dot ${k===0?'active':''}" data-i="${k}" aria-label="Reviews page ${k+1}"></button>`).join('');
+tDots.querySelectorAll('.t-dot').forEach(d => d.addEventListener('click', () => goRev(+d.dataset.i)));
+document.getElementById('rev-prev').addEventListener('click', () => goRev(revIdx - 1));
+document.getElementById('rev-next').addEventListener('click', () => goRev(revIdx + 1));
+renderRevPage();
+resetRevTimer();
 
 /* ============== CONTACT (basic UX; submission via Netlify Forms) ============== */
 const form = document.getElementById('contact-form');

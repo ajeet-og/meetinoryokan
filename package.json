@@ -1,0 +1,10 @@
+{
+  "name": "meeti-no-ryokan",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python3 serve.py",
+    "build": "echo 'static site - nothing to build'",
+    "start": "python3 serve.py"
+  }
+}
