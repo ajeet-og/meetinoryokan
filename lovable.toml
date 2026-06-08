@@ -1,2 +1,2 @@
 [run]
-dev = "bunx --bun serve -l 8080 public"
+dev = "python3 -m http.server 8080 --directory public --bind 0.0.0.0"
