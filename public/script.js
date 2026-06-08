@@ -147,33 +147,29 @@ document.querySelectorAll('.g-item').forEach(b => {
 });
 lb.addEventListener('click', () => { lb.hidden = true; lbImg.src = ''; });
 
-/* ============== TESTIMONIALS ============== */
-const tWrap = document.getElementById('testimonials');
+/* ============== REVIEWS slideshow (4 at a time, every 5s, prev/next) ============== */
+const revGrid = document.getElementById('reviews-grid');
 const tDots = document.getElementById('t-dots');
-let tIdx = 0, tInterval;
-function renderTestimonials() {
-  const items = testimonialsData[lang];
-  tWrap.innerHTML = items.map((it, k) => `
-    <div class="t-item ${k===0?'active':''}">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-text font-mincho">「${it.text}」</p>
-      <div class="t-name">${it.name}</div>
-      <div class="t-from">${it.from}</div>
-    </div>
-  `).join('');
-  tDots.innerHTML = items.map((_, k) => `<button class="t-dot ${k===0?'active':''}" data-i="${k}" aria-label="Testimonial ${k+1}"></button>`).join('');
-  tIdx = 0;
-  tDots.querySelectorAll('.t-dot').forEach(d => d.addEventListener('click', () => goT(+d.dataset.i)));
-  clearInterval(tInterval);
-  tInterval = setInterval(() => goT(tIdx + 1), 6500);
+const PER_PAGE = 4;
+const revPages = [];
+for (let i = 0; i < reviewImages.length; i += PER_PAGE) revPages.push(reviewImages.slice(i, i + PER_PAGE));
+let revIdx = 0, revTimer;
+function renderRevPage() {
+  const page = revPages[revIdx] || [];
+  revGrid.innerHTML = page.map(src => `<button class="rev-item" data-src="${src}"><img src="${src}" alt="Guest handwritten review" loading="lazy" /></button>`).join('');
+  tDots.querySelectorAll('.t-dot').forEach((d, k) => d.classList.toggle('active', k === revIdx));
+  revGrid.querySelectorAll('.rev-item').forEach(b => b.addEventListener('click', () => {
+    lbImg.src = b.dataset.src; lb.hidden = false;
+  }));
 }
-function goT(i) {
-  const items = tWrap.querySelectorAll('.t-item');
-  const dts = tDots.querySelectorAll('.t-dot');
-  tIdx = (i + items.length) % items.length;
-  items.forEach((el, k) => el.classList.toggle('active', k === tIdx));
-  dts.forEach((el, k) => el.classList.toggle('active', k === tIdx));
-}
+function goRev(i) { revIdx = (i + revPages.length) % revPages.length; renderRevPage(); resetRevTimer(); }
+function resetRevTimer() { clearInterval(revTimer); revTimer = setInterval(() => goRev(revIdx + 1), 5000); }
+tDots.innerHTML = revPages.map((_, k) => `<button class="t-dot ${k===0?'active':''}" data-i="${k}" aria-label="Reviews page ${k+1}"></button>`).join('');
+tDots.querySelectorAll('.t-dot').forEach(d => d.addEventListener('click', () => goRev(+d.dataset.i)));
+document.getElementById('rev-prev').addEventListener('click', () => goRev(revIdx - 1));
+document.getElementById('rev-next').addEventListener('click', () => goRev(revIdx + 1));
+renderRevPage();
+resetRevTimer();
 
 /* ============== CONTACT (basic UX; submission via Netlify Forms) ============== */
 const form = document.getElementById('contact-form');
