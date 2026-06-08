@@ -22,7 +22,7 @@ const dict = {
   "about.r3.t": ["聖地へのアクセス","Access to sacred sites"],
   "about.r3.d": ["寺院、ガート、地元の隠れた名所へのプライベートツアーを手配いたします。","We arrange private tours to temples, ghats and hidden local spots."],
   "about.r4.t": ["無料の文化体験","Free cultural experiences"],
-  "about.r4.d": ["サリーやクルタ・パジャマ、ターバンなどの伝統衣装の着付け体験、ヘナタトゥー(メヘンディ)など、インドの文化を無料で体験していただけます。","Free cultural exchange activities — try traditional Indian dress (saree, kurta-pajama, turban) and enjoy henna (mehndi) tattoo sessions with our family."],
+  "about.r4.d": ["伝統衣装(サリー、クルタ・パジャマ、ターバン)の着付け体験をお楽しみいただけます。また、ヘナタトゥー(メヘンディ)も無料でご体験いただけます。","Try traditional Indian dress — saree, kurta-pajama and turban — and we also do henna (mehndi) tattoos."],
   "rooms.kicker": ["YOUR SANCTUARY","YOUR SANCTUARY"],
   "rooms.title": ["客室のご案内","Accommodation"],
   "rooms.note": ["全室エアコン・高速Wi-Fi完備","All rooms feature AC and high-speed Wi-Fi"],
