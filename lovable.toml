@@ -1,0 +1,2 @@
+[run]
+dev = "bunx --bun serve -l 8080 public"
