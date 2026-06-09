@@ -60,7 +60,7 @@ const dict = {
   "gallery.kicker": ["FAMILY","FAMILY"],
   "gallery.title": ["私たちの大切な家族","Our beautiful japanese family"],
   "test.kicker": ["GUEST VOICES","GUEST VOICES"],
-  "test.title": ["ゲストの声","What guests say"],
+  "test.title": ["レビュー","Reviews"],
   "loc.kicker": ["FIND US","FIND US"],
   "loc.title": ["アクセス","Find us"],
   "loc.addr": ["D-40, Preet Vihar, New Delhi 110092, India","D-40, Preet Vihar, New Delhi 110092, India"],
@@ -158,14 +158,12 @@ function renderRevPage() {
   revGrid.innerHTML = page.map(src => `<div class="rev-item"><img src="${src}" alt="Guest handwritten review" loading="lazy" /></div>`).join('');
   tDots.querySelectorAll('.t-dot').forEach((d, k) => d.classList.toggle('active', k === revIdx));
 }
-function goRev(i) { revIdx = (i + revPages.length) % revPages.length; renderRevPage(); resetRevTimer(); }
-function resetRevTimer() { clearInterval(revTimer); revTimer = setInterval(() => goRev(revIdx + 1), 5000); }
+function goRev(i) { revIdx = (i + revPages.length) % revPages.length; renderRevPage(); }
 tDots.innerHTML = revPages.map((_, k) => `<button class="t-dot ${k===0?'active':''}" data-i="${k}" aria-label="Reviews page ${k+1}"></button>`).join('');
 tDots.querySelectorAll('.t-dot').forEach(d => d.addEventListener('click', () => goRev(+d.dataset.i)));
 document.getElementById('rev-prev').addEventListener('click', () => goRev(revIdx - 1));
 document.getElementById('rev-next').addEventListener('click', () => goRev(revIdx + 1));
 renderRevPage();
-resetRevTimer();
 
 /* ============== CONTACT (basic UX; submission via Netlify Forms) ============== */
 const form = document.getElementById('contact-form');
