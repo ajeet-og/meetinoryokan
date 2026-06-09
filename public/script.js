@@ -146,17 +146,6 @@ document.querySelectorAll('.section .container > *, .about-grid > *, .rooms-grid
 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ============== GALLERY lightbox ============== */
-const lb = document.getElementById('lightbox');
-const lbImg = lb.querySelector('img');
-document.querySelectorAll('.g-item').forEach(b => {
-  b.addEventListener('click', () => {
-    lbImg.src = b.querySelector('img').src;
-    lb.hidden = false;
-  });
-});
-lb.addEventListener('click', () => { lb.hidden = true; lbImg.src = ''; });
-
 /* ============== REVIEWS slideshow (4 at a time, every 5s, prev/next) ============== */
 const revGrid = document.getElementById('reviews-grid');
 const tDots = document.getElementById('t-dots');
@@ -166,11 +155,8 @@ for (let i = 0; i < reviewImages.length; i += PER_PAGE) revPages.push(reviewImag
 let revIdx = 0, revTimer;
 function renderRevPage() {
   const page = revPages[revIdx] || [];
-  revGrid.innerHTML = page.map(src => `<button class="rev-item" data-src="${src}"><img src="${src}" alt="Guest handwritten review" loading="lazy" /></button>`).join('');
+  revGrid.innerHTML = page.map(src => `<div class="rev-item"><img src="${src}" alt="Guest handwritten review" loading="lazy" /></div>`).join('');
   tDots.querySelectorAll('.t-dot').forEach((d, k) => d.classList.toggle('active', k === revIdx));
-  revGrid.querySelectorAll('.rev-item').forEach(b => b.addEventListener('click', () => {
-    lbImg.src = b.dataset.src; lb.hidden = false;
-  }));
 }
 function goRev(i) { revIdx = (i + revPages.length) % revPages.length; renderRevPage(); resetRevTimer(); }
 function resetRevTimer() { clearInterval(revTimer); revTimer = setInterval(() => goRev(revIdx + 1), 5000); }

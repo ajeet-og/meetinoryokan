@@ -196,14 +196,9 @@ iframe { border: 0; }
 /* ============ GALLERY ============ */
 .gallery { columns: 2; column-gap: 1rem; }
 @media (min-width: 768px) { .gallery { columns: 3; } }
-.g-item { display: block; width: 100%; padding: 0; margin: 0 0 1rem 0; overflow: hidden; cursor: zoom-in; break-inside: avoid; }
+.g-item { display: block; width: 100%; padding: 0; margin: 0 0 1rem 0; overflow: hidden; break-inside: avoid; }
 .g-item img { width: 100%; height: auto; transition: transform 1.2s ease-out; }
 .g-item:hover img { transform: scale(1.05); }
-#lightbox { position: fixed; inset: 0; z-index: 100; background: color-mix(in oklab, var(--indigo) 95%, transparent); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
-#lightbox[hidden] { display: none; }
-#lightbox img { max-height: 88vh; max-width: 92vw; object-fit: contain; box-shadow: 0 25px 50px rgba(0,0,0,.5); }
-.lb-close { position: absolute; top: 1.5rem; right: 1.5rem; color: color-mix(in oklab, var(--washi) 80%, transparent); font-size: 2rem; line-height: 1; }
-.lb-close:hover { color: var(--washi); }
 
 /* ============ TESTIMONIALS ============ */
 .testimonial-section .container { color: var(--washi); }
@@ -298,7 +293,7 @@ footer .small { font-size: 0.75rem; color: color-mix(in oklab, var(--charcoal) 4
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
 }
 .rev-item {
-  border: 0; padding: 0; background: #fff; cursor: pointer;
+  border: 0; padding: 0; background: #fff;
   border-radius: 6px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,.35);
   aspect-ratio: 3/4; transition: transform .35s ease, box-shadow .35s ease;
 }
