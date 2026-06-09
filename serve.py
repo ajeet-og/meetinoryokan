@@ -6,7 +6,7 @@ class ReusableTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
 
 
-port = 8080
+port = int(os.environ.get("PORT", "8080"))
 args = sys.argv[1:]
 for i, a in enumerate(args):
     if a == "--port" and i+1 < len(args):
