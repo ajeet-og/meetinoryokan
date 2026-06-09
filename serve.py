@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 import sys, os, http.server, socketserver
+
+
+class ReusableTCPServer(socketserver.TCPServer):
+    allow_reuse_address = True
+
+
 port = 8080
 args = sys.argv[1:]
 for i, a in enumerate(args):
@@ -9,6 +15,6 @@ for i, a in enumerate(args):
         port = int(a.split("=",1)[1])
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "public"))
 handler = http.server.SimpleHTTPRequestHandler
-with socketserver.TCPServer(("0.0.0.0", port), handler) as httpd:
+with ReusableTCPServer(("0.0.0.0", port), handler) as httpd:
     print(f"Serving public/ on :{port}")
     httpd.serve_forever()
