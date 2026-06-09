@@ -15,6 +15,14 @@ for i, a in enumerate(args):
         port = int(a.split("=",1)[1])
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), "public"))
 handler = http.server.SimpleHTTPRequestHandler
-with ReusableTCPServer(("0.0.0.0", port), handler) as httpd:
-    print(f"Serving public/ on :{port}")
-    httpd.serve_forever()
+
+while True:
+    try:
+        with ReusableTCPServer(("0.0.0.0", port), handler) as httpd:
+            print(f"Serving public/ on :{port}")
+            httpd.serve_forever()
+        break
+    except OSError as exc:
+        if exc.errno != 98:
+            raise
+        port += 1
