@@ -127,11 +127,32 @@
     </div>
   </section>
 
+  <!-- FEATURED IN marquee -->
+  <section class="featured-in" aria-label="Featured in">
+    <div class="featured-head">
+      <span class="kicker" data-i18n="feat.kicker">FEATURED IN</span>
+      <h2 class="featured-title font-mincho" data-i18n="feat.title">掲載メディア</h2>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="m-item"><img src="/assets/feature-aera1.webp" alt="Monthly junior AERA — India feature" loading="lazy" /></div>
+        <div class="m-item"><img src="/assets/feature-aera2.webp" alt="Monthly junior AERA — India schools" loading="lazy" /></div>
+        <div class="m-item"><img src="/assets/feature-chalo.webp" alt="Chalo Cooking — Miti Didi feature" loading="lazy" /></div>
+        <div class="m-item"><img src="/assets/feature-divali.png" alt="Diwali / Dussehra festival" loading="lazy" /></div>
+        <!-- duplicate for seamless loop -->
+        <div class="m-item" aria-hidden="true"><img src="/assets/feature-aera1.webp" alt="" loading="lazy" /></div>
+        <div class="m-item" aria-hidden="true"><img src="/assets/feature-aera2.webp" alt="" loading="lazy" /></div>
+        <div class="m-item" aria-hidden="true"><img src="/assets/feature-chalo.webp" alt="" loading="lazy" /></div>
+        <div class="m-item" aria-hidden="true"><img src="/assets/feature-divali.png" alt="" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container about-grid">
       <div class="reveal about-image">
-        <img src="/assets/about-gurudwara.webp" alt="Guests visiting Gurudwara Bangla Sahib with the family" loading="lazy" width="800" height="1000" />
+        <img src="/assets/gallery-drawing.webp" alt="Guests enjoying a drawing activity with the family" loading="lazy" width="800" height="1000" />
         <aside class="about-quote font-mincho">
           <p data-i18n="about.q">「日本のおもてなしを、インドの熱気の中で。」</p>
         </aside>
@@ -198,6 +219,9 @@
         <li><svg viewBox="0 0 24 24"><path d="M12 22a8 8 0 0 0 8-8c0-3.5-2-6.5-8-12-6 5.5-8 8.5-8 12a8 8 0 0 0 8 8z"/></svg><span data-i18n="fac.hot">24時間お湯</span></li>
         <li><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-i18n="fac.sec">セキュリティ</span></li>
         <li><svg viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3zM5 17l.8 2.2L8 20l-2.2.8L5 23l-.8-2.2L2 20l2.2-.8L5 17zM19 14l.6 1.6L21 16l-1.4.4L19 18l-.6-1.6L17 16l1.4-.4z"/></svg><span data-i18n="fac.clean">毎日清掃</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M3 21l4-1 11-11-3-3L4 17l-1 4zM14 6l3 3M9 21h12"/></svg><span data-i18n="fac.sights">デリー観光ツアー</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 13h16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM6 9c0-1 1-2 1-3M10 9c0-1 1-2 1-3M14 9c0-1 1-2 1-3M2 21h20"/></svg><span data-i18n="fac.curry">カレー料理体験</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></svg><span data-i18n="fac.karaoke">カラオケ</span></li>
       </ul>
     </div>
   </section>
@@ -225,7 +249,7 @@
         <h2 class="section-title" data-i18n="gallery.title">私たちの大切な家族</h2>
       </div>
       <div class="gallery">
-        <button class="g-item"><img src="/assets/gallery-drawing.webp" alt="Drawing activity" loading="lazy" /></button>
+        <button class="g-item"><img src="/assets/about-gurudwara.webp" alt="Visiting Gurudwara with the family" loading="lazy" /></button>
         <button class="g-item"><img src="/assets/gallery-dining.webp" alt="Family dining" loading="lazy" /></button>
         <button class="g-item"><img src="/assets/gallery-living.webp" alt="Living area" loading="lazy" /></button>
         <button class="g-item"><img src="/assets/gallery-2girls.webp" alt="Two guests" loading="lazy" /></button>

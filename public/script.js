@@ -180,7 +180,7 @@ form.addEventListener('submit', (e) => {
 /* ============== MUSIC ============== */
 const audio = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
-audio.volume = 0.12;
+audio.volume = 0.55;
 let musicOn = false;
 function updateMusicIcon() {
   musicBtn.innerHTML = musicOn
