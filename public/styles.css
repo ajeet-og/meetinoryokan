@@ -379,13 +379,100 @@ footer .small { font-size: 0.75rem; color: color-mix(in oklab, var(--charcoal) 4
 }
 
 /* ============== Kawaii decorations ============== */
-.kawaii { position: fixed; pointer-events: none; z-index: 30; opacity: .85; }
-.kawaii-cat { width: 64px; height: 64px; top: 78px; right: 14px; animation: bob 4s ease-in-out infinite; }
-.kawaii-daruma { width: 70px; height: 70px; bottom: 110px; right: 18px; animation: bob 5s ease-in-out infinite reverse; }
-.kawaii-effigy { width: 120px; height: auto; left: 8px; bottom: 110px; opacity: .55; animation: sway 6s ease-in-out infinite; }
+.kawaii { position: fixed; pointer-events: none; z-index: 30; opacity: .9; }
+.kawaii-cat { width: 68px; height: 68px; top: 96px; right: 18px; animation: dance1 4.2s ease-in-out infinite; }
+.kawaii-bunny { width: 72px; height: 72px; top: 40%; left: 14px; animation: dance2 5s ease-in-out infinite; }
+.kawaii-onigiri { width: 62px; height: 62px; top: 62%; right: 12px; animation: dance3 4.6s ease-in-out infinite; }
+.kawaii-mochi { width: 66px; height: 66px; top: 22%; left: 2%; animation: dance1 5.4s ease-in-out infinite reverse; }
+.kawaii-effigy { width: 120px; height: auto; left: 8px; bottom: 130px; opacity: .5; animation: sway 6s ease-in-out infinite; }
 @media (max-width: 768px) {
-  .kawaii-cat, .kawaii-daruma { display: none; }
-  .kawaii-effigy { width: 80px; opacity: .35; }
+  .kawaii-cat, .kawaii-bunny, .kawaii-onigiri, .kawaii-mochi { width: 46px; height: 46px; opacity: .8; }
+  .kawaii-effigy { width: 70px; opacity: .3; bottom: 180px; }
+  .kawaii-bunny { top: auto; bottom: 220px; left: 6px; }
+  .kawaii-mochi { display: none; }
 }
-@keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(3deg); } }
+@keyframes dance1 { 0%,100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-10px) rotate(6deg); } }
+@keyframes dance2 { 0%,100% { transform: translateX(0) rotate(-4deg) scale(1); } 50% { transform: translateX(8px) rotate(6deg) scale(1.05); } }
+@keyframes dance3 { 0%,100% { transform: translateY(0) scale(1); } 25% { transform: translateY(-6px) scale(1.08); } 75% { transform: translateY(-3px) scale(.95); } }
 @keyframes sway { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+
+/* ============== Meeta Chan speech bubble ============== */
+.about-image { position: relative; }
+.meeta-bubble {
+  position: absolute; top: -18px; left: 50%; transform: translateX(-50%) rotate(-2deg);
+  background: #fff8ee; color: #2b1a0f;
+  border: 2px solid #5a3a2e; border-radius: 22px;
+  padding: .75rem 1.1rem; font-size: .95rem; line-height: 1.35;
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+  text-align: center; max-width: 260px; z-index: 3;
+  animation: dance3 4.4s ease-in-out infinite;
+}
+.meeta-bubble::after {
+  content: ""; position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
+  width: 0; height: 0; border: 8px solid transparent;
+  border-top-color: #5a3a2e;
+}
+.meeta-bubble::before {
+  content: ""; position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%);
+  width: 0; height: 0; border: 7px solid transparent;
+  border-top-color: #fff8ee; z-index: 1;
+}
+@media (max-width: 640px) {
+  .meeta-bubble { font-size: .8rem; padding: .55rem .8rem; max-width: 220px; top: -10px; }
+}
+
+/* ============== Floating Instagram bubble ============== */
+.float-ig-wrap { position: relative; display: flex; flex-direction: column; align-items: flex-end; gap: .4rem; }
+.ig-float-char {
+  width: 52px; height: 52px; align-self: flex-end;
+  animation: dance1 3.6s ease-in-out infinite;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.2));
+}
+.ig-float-bubble {
+  background: #fff; color: #2b1a0f; font-family: var(--font-mincho);
+  padding: .5rem .85rem; border-radius: 16px; font-size: .82rem; font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,.2); position: relative;
+  border: 1.5px solid #5a3a2e;
+  align-self: flex-end; white-space: nowrap;
+}
+.ig-float-bubble::after {
+  content: ""; position: absolute; right: 22px; bottom: -8px;
+  width: 0; height: 0; border: 6px solid transparent; border-top-color: #5a3a2e;
+}
+.ig-float-bubble::before {
+  content: ""; position: absolute; right: 23px; bottom: -5px;
+  width: 0; height: 0; border: 5px solid transparent; border-top-color: #fff; z-index: 1;
+}
+@media (max-width: 480px) {
+  .ig-float-char { width: 42px; height: 42px; }
+  .ig-float-bubble { font-size: .72rem; padding: .35rem .6rem; }
+}
+
+/* ============== Reviews +50% larger, family gallery -20% ============== */
+.reviews-wrap { max-width: 1600px; padding: 0 72px; }
+@media (min-width: 1024px) {
+  .reviews-grid { grid-template-columns: repeat(4, 1fr); gap: 36px; }
+  .rev-item { aspect-ratio: 3/4.2; }
+}
+@media (max-width: 640px) {
+  .reviews-wrap { padding: 0 40px; }
+  .rev-item { aspect-ratio: 3/4; max-width: 92vw; }
+}
+
+/* shrink family gallery images 20% */
+.gallery { max-width: 1120px; margin: 0 auto; columns: 2; column-gap: .85rem; }
+@media (min-width: 768px) { .gallery { columns: 4; } }
+.g-item { margin-bottom: .85rem; }
+
+/* ============== Mobile image ratio safety ============== */
+@media (max-width: 640px) {
+  .about-image img { aspect-ratio: 4/5; max-height: 70vh; }
+  .room .room-img { aspect-ratio: 4/3; max-height: 55vh; }
+  .hero { min-height: 100svh; }
+  .m-item { height: 140px; }
+  .float-btn { padding: .55rem .9rem .55rem .75rem; font-size: 11px; }
+  .float-btn span { display: none; }
+  .float-btn svg { width: 18px; height: 18px; }
+  .float-btn.float-wa span { display: inline; }
+}
+

@@ -33,6 +33,7 @@ const dict = {
   "about.r3.d": ["寺院、ガート、地元の隠れた名所へのプライベートツアーを手配いたします。","We arrange private tours to temples, ghats and hidden local spots."],
   "about.r4.t": ["無料の文化体験","Free cultural experiences"],
   "about.r4.d": ["伝統衣装(サリー、クルタ・パジャマ、ターバン)の着付け体験をお楽しみいただけます。また、ヘナタトゥー(メヘンディ)も無料でご体験いただけます。","Try traditional Indian dress — saree, kurta-pajama and turban — and we also do henna (mehndi) tattoos."],
+  "about.meeta": ["私、ミータちゃんよ。<br>インドのあなたのお母さん 💛","I'm Meeta Chan,<br>your mother in India 💛"],
   "rooms.kicker": ["YOUR SANCTUARY","YOUR SANCTUARY"],
   "rooms.title": ["客室のご案内","Accommodation"],
   "rooms.note": ["全室エアコン・高速Wi-Fi完備","All rooms feature AC and high-speed Wi-Fi"],
@@ -103,7 +104,9 @@ function applyLang() {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.getAttribute('data-i18n');
-    if (dict[k]) el.textContent = dict[k][i];
+    if (!dict[k]) return;
+    const v = dict[k][i];
+    if (v.includes('<')) el.innerHTML = v; else el.textContent = v;
   });
   document.querySelectorAll('.lang-toggle button').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
