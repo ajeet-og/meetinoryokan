@@ -104,7 +104,9 @@ function applyLang() {
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const k = el.getAttribute('data-i18n');
-    if (dict[k]) el.textContent = dict[k][i];
+    if (!dict[k]) return;
+    const v = dict[k][i];
+    if (v.includes('<')) el.innerHTML = v; else el.textContent = v;
   });
   document.querySelectorAll('.lang-toggle button').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
