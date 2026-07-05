@@ -423,11 +423,6 @@ footer .small { font-size: 0.75rem; color: color-mix(in oklab, var(--charcoal) 4
 
 /* ============== Floating Instagram bubble ============== */
 .float-ig-wrap { position: relative; display: flex; flex-direction: column; align-items: flex-end; gap: .4rem; }
-.ig-float-char {
-  width: 52px; height: 52px; align-self: flex-end;
-  animation: dance1 3.6s ease-in-out infinite;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,.2));
-}
 .ig-float-bubble {
   background: #fff; color: #2b1a0f; font-family: var(--font-mincho);
   padding: .5rem .85rem; border-radius: 16px; font-size: .82rem; font-weight: 500;
@@ -435,28 +430,21 @@ footer .small { font-size: 0.75rem; color: color-mix(in oklab, var(--charcoal) 4
   border: 1.5px solid #5a3a2e;
   align-self: flex-end; white-space: nowrap;
 }
-.ig-float-bubble::after {
-  content: ""; position: absolute; right: 22px; bottom: -8px;
-  width: 0; height: 0; border: 6px solid transparent; border-top-color: #5a3a2e;
-}
-.ig-float-bubble::before {
-  content: ""; position: absolute; right: 23px; bottom: -5px;
-  width: 0; height: 0; border: 5px solid transparent; border-top-color: #fff; z-index: 1;
-}
 @media (max-width: 480px) {
-  .ig-float-char { width: 42px; height: 42px; }
   .ig-float-bubble { font-size: .72rem; padding: .35rem .6rem; }
 }
 
-/* ============== Reviews +50% larger, family gallery -20% ============== */
-.reviews-wrap { max-width: 1600px; padding: 0 72px; }
+/* ============== Reviews much larger (2x), family gallery -20% ============== */
+.reviews-wrap { max-width: 1400px; padding: 0 80px; }
+.reviews-grid { grid-template-columns: 1fr !important; gap: 32px; }
+.rev-item { aspect-ratio: 4/3; max-width: 900px; margin: 0 auto; width: 100%; }
 @media (min-width: 1024px) {
-  .reviews-grid { grid-template-columns: repeat(4, 1fr); gap: 36px; }
-  .rev-item { aspect-ratio: 3/4.2; }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px; }
+  .rev-item { aspect-ratio: 3/4; max-width: none; }
 }
 @media (max-width: 640px) {
-  .reviews-wrap { padding: 0 40px; }
-  .rev-item { aspect-ratio: 3/4; max-width: 92vw; }
+  .reviews-wrap { padding: 0 32px; }
+  .rev-item { aspect-ratio: 3/4; max-width: 96vw; }
 }
 
 /* shrink family gallery images 20% */
