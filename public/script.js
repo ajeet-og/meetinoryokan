@@ -56,6 +56,7 @@ const dict = {
   "fac.sights": ["デリー観光ツアー","Delhi sightseeing"],
   "fac.curry": ["カレー料理体験","Curry cooking class"],
   "fac.karaoke": ["カラオケ","Karaoke"],
+  "fac.tours": ["格安ツアーパッケージ","Affordable Tour Packages"],
   "feat.kicker": ["FEATURED IN","FEATURED IN"],
   "feat.title": ["掲載メディア","Featured in"],
   "ig.prompt": ["フォローしてね！","Follow us on Instagram!"],
