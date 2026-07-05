@@ -56,6 +56,7 @@ const dict = {
   "fac.sights": ["デリー観光ツアー","Delhi sightseeing"],
   "fac.curry": ["カレー料理体験","Curry cooking class"],
   "fac.karaoke": ["カラオケ","Karaoke"],
+  "fac.tours": ["格安ツアーパッケージ","Affordable Tour Packages"],
   "feat.kicker": ["FEATURED IN","FEATURED IN"],
   "feat.title": ["掲載メディア","Featured in"],
   "ig.prompt": ["フォローしてね！","Follow us on Instagram!"],
@@ -189,7 +190,8 @@ form.addEventListener('submit', (e) => {
 /* ============== MUSIC ============== */
 const audio = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
-audio.volume = 0.55;
+audio.volume = 1.0;
+audio.muted = false;
 let musicOn = false;
 function updateMusicIcon() {
   musicBtn.innerHTML = musicOn
@@ -197,11 +199,23 @@ function updateMusicIcon() {
     : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>';
 }
 updateMusicIcon();
-function tryPlay() { audio.play().then(() => { musicOn = true; updateMusicIcon(); }).catch(() => {}); }
+function tryPlay() {
+  audio.muted = false;
+  audio.volume = 1.0;
+  const p = audio.play();
+  if (p && p.then) {
+    p.then(() => { musicOn = true; updateMusicIcon(); })
+     .catch((err) => { console.warn('Music autoplay blocked, waiting for gesture:', err && err.message); });
+  }
+}
 tryPlay();
-const onGesture = () => { if (audio.paused) tryPlay(); window.removeEventListener('pointerdown', onGesture); window.removeEventListener('keydown', onGesture); };
-window.addEventListener('pointerdown', onGesture, { once: true });
-window.addEventListener('keydown', onGesture, { once: true });
+const onGesture = () => { if (audio.paused) tryPlay(); };
+window.addEventListener('pointerdown', onGesture);
+window.addEventListener('keydown', onGesture);
+window.addEventListener('touchstart', onGesture, { passive: true });
+audio.addEventListener('play', () => { musicOn = true; updateMusicIcon(); });
+audio.addEventListener('pause', () => { musicOn = false; updateMusicIcon(); });
+audio.addEventListener('error', () => { console.error('Music failed to load:', audio.error); });
 musicBtn.addEventListener('click', () => {
   if (audio.paused) tryPlay();
   else { audio.pause(); musicOn = false; updateMusicIcon(); }
