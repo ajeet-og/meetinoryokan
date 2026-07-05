@@ -123,7 +123,18 @@ document.querySelectorAll('.lang-toggle button').forEach(b => {
 
 /* ============== NAV scroll ============== */
 const nav = document.getElementById('nav');
-const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+const floatEls = () => document.querySelectorAll('.kawaii, .float-stack, .music-btn');
+const onScroll = () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  const h = window.innerHeight || 800;
+  // fade in from 0 at top to 1 once user scrolls ~70% of viewport
+  const p = Math.min(1, Math.max(0, (window.scrollY - h * 0.15) / (h * 0.55)));
+  floatEls().forEach(el => {
+    el.style.opacity = p.toFixed(3);
+    el.style.pointerEvents = p > 0.85 ? '' : 'none';
+    el.style.transition = 'opacity .35s ease';
+  });
+};
 window.addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 
