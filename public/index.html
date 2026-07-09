@@ -60,30 +60,97 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
+  "@type": ["LodgingBusiness","BedAndBreakfast"],
+  "@id": "https://meetinoryokan.com/#lodging",
   "name": "Meeti No Ryokan",
-  "alternateName": "燦",
-  "description": "Family-run Japanese-style guest house in Preet Vihar, New Delhi. Japanese language support, safe meals, and cultural experiences.",
-  "image": "https://meetinoryokan.lovable.app/assets/guest-rooftop.jpg",
-  "url": "https://meetinoryokan.lovable.app/",
+  "alternateName": ["ミータの旅館","燦","Meeti no Ryokan Delhi"],
+  "description": "Family-run Japanese-style guest house in Preet Vihar, New Delhi. Fluent Japanese language support, safe home-cooked meals, cultural experiences, and affordable tour packages for Japanese travelers in India.",
+  "image": [
+    "https://meetinoryokan.lovable.app/assets/guest-rooftop.jpg",
+    "https://meetinoryokan.lovable.app/assets/guest-saree.jpg",
+    "https://meetinoryokan.lovable.app/assets/guest-lounge.jpg"
+  ],
+  "url": "https://meetinoryokan.com/",
   "telephone": "+91-98680-17189",
+  "email": "info@meetinoryokan.com",
   "priceRange": "₹₹",
+  "currenciesAccepted": "INR, JPY, USD",
+  "paymentAccepted": "Cash, UPI, Bank Transfer",
+  "checkinTime": "13:00",
+  "checkoutTime": "11:00",
+  "numberOfRooms": 6,
+  "petsAllowed": false,
+  "smokingAllowed": false,
+  "starRating": {"@type":"Rating","ratingValue":"4.9"},
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"120","bestRating":"5"},
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "D-40, Preet Vihar",
     "addressLocality": "New Delhi",
+    "addressRegion": "Delhi",
     "postalCode": "110092",
     "addressCountry": "IN"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 28.6360, "longitude": 77.2940 },
+  "areaServed": ["New Delhi","India","Japan"],
+  "knowsLanguage": ["ja","en","hi"],
   "amenityFeature": [
     { "@type": "LocationFeatureSpecification", "name": "High-speed Wi-Fi", "value": true },
     { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
     { "@type": "LocationFeatureSpecification", "name": "Airport Pickup", "value": true },
-    { "@type": "LocationFeatureSpecification", "name": "Japanese-speaking staff", "value": true }
+    { "@type": "LocationFeatureSpecification", "name": "Japanese-speaking staff", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Home-cooked Japanese-friendly meals", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Laundry Service", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "24-hour Hot Water", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Affordable Tour Packages", "value": true }
   ],
   "sameAs": [
+    "https://meetinoryokan.com/",
+    "https://meetinoryokan.in/",
+    "https://meetinoryokan.lovable.app/",
     "https://www.instagram.com/meeti_no_ryokan/"
+  ]
+}
+</script>
+
+<!-- JSON-LD: WebSite (sitelinks search) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"WebSite",
+  "name":"Meeti No Ryokan",
+  "url":"https://meetinoryokan.com/",
+  "inLanguage":["ja","en"]
+}
+</script>
+
+<!-- JSON-LD: Organization -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Organization",
+  "name":"Meeti No Ryokan",
+  "url":"https://meetinoryokan.com/",
+  "logo":"https://meetinoryokan.lovable.app/favicon.svg",
+  "sameAs":[
+    "https://meetinoryokan.com/",
+    "https://meetinoryokan.in/",
+    "https://www.instagram.com/meeti_no_ryokan/"
+  ]
+}
+</script>
+
+<!-- JSON-LD: FAQ (indexable Q&A) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is Meeti No Ryokan a Japanese-friendly guest house in Delhi?",
+     "acceptedAnswer":{"@type":"Answer","text":"Yes. Meeti No Ryokan is a family-run Japanese guest house in Preet Vihar, New Delhi with fluent Japanese-speaking staff available 24 hours a day, safe home-cooked meals, and cultural experiences designed for Japanese travelers."}},
+    {"@type":"Question","name":"デリーで一番安心できる日本人宿はどこですか？",
+     "acceptedAnswer":{"@type":"Answer","text":"ミータの旅館（Meeti No Ryokan）は、デリー Preet Vihar にある家族経営の日本人向けゲストハウスです。日本語対応スタッフ、安心の家庭料理、空港送迎、格安ツアーを提供しています。"}},
+    {"@type":"Question","name":"Do you offer airport pickup from Indira Gandhi International Airport?",
+     "acceptedAnswer":{"@type":"Answer","text":"Yes, we arrange safe airport pickup and drop-off from Indira Gandhi International Airport (about 45 minutes from the guest house)."}},
+    {"@type":"Question","name":"Do you organize India tour packages for Japanese travelers?",
+     "acceptedAnswer":{"@type":"Answer","text":"Yes. We offer affordable, Japanese-guided tour packages across Delhi, Agra (Taj Mahal), Varanasi, Rishikesh and other destinations."}}
   ]
 }
 </script>
