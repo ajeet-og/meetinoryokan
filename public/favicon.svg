@@ -1,3 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <path transform="rotate(-12 32 32)" d="M32 56C30.8 56 29.7 55.6 28.8 54.8L10.7 38.2C5.7 33.5 3 28.8 3 22.9C3 13.8 10 7 18.8 7C24 7 28.7 9.5 32 13.4C35.3 9.5 40 7 45.2 7C54 7 61 13.8 61 22.9C61 28.8 58.3 33.5 53.3 38.2L35.2 54.8C34.3 55.6 33.2 56 32 56Z" fill="#ec4899"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="heart">
+      <path d="M32 56C30.8 56 29.7 55.6 28.8 54.8L10.7 38.2C5.7 33.5 3 28.8 3 22.9C3 13.8 10 7 18.8 7C24 7 28.7 9.5 32 13.4C35.3 9.5 40 7 45.2 7C54 7 61 13.8 61 22.9C61 28.8 58.3 33.5 53.3 38.2L35.2 54.8C34.3 55.6 33.2 56 32 56Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#heart)">
+    <!-- Japan half (left): white with red sun -->
+    <rect x="0" y="0" width="32" height="64" fill="#ffffff"/>
+    <circle cx="20" cy="30" r="9" fill="#bc002d"/>
+    <!-- India half (right): saffron, white, green -->
+    <rect x="32" y="0" width="32" height="21.3" fill="#ff9933"/>
+    <rect x="32" y="21.3" width="32" height="21.4" fill="#ffffff"/>
+    <rect x="32" y="42.7" width="32" height="21.3" fill="#138808"/>
+    <circle cx="47" cy="32" r="4.2" fill="none" stroke="#000080" stroke-width="1.2"/>
+    <circle cx="47" cy="32" r="1" fill="#000080"/>
+  </g>
+  <path d="M32 56C30.8 56 29.7 55.6 28.8 54.8L10.7 38.2C5.7 33.5 3 28.8 3 22.9C3 13.8 10 7 18.8 7C24 7 28.7 9.5 32 13.4C35.3 9.5 40 7 45.2 7C54 7 61 13.8 61 22.9C61 28.8 58.3 33.5 53.3 38.2L35.2 54.8C34.3 55.6 33.2 56 32 56Z" fill="none" stroke="#2b1a0f" stroke-width="2.5"/>
 </svg>

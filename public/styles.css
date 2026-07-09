@@ -434,17 +434,25 @@ footer .small { font-size: 0.75rem; color: color-mix(in oklab, var(--charcoal) 4
   .ig-float-bubble { font-size: .72rem; padding: .35rem .6rem; }
 }
 
-/* ============== Reviews much larger (2x), family gallery -20% ============== */
-.reviews-wrap { max-width: 1400px; padding: 0 80px; }
-.reviews-grid { grid-template-columns: 1fr !important; gap: 32px; }
-.rev-item { aspect-ratio: 4/3; max-width: 900px; margin: 0 auto; width: 100%; }
+/* ============== Reviews: 4-up on desktop, readable on mobile ============== */
+.reviews-wrap { max-width: 1500px; padding: 0 60px; }
+.reviews-grid { grid-template-columns: 1fr !important; gap: 20px; }
+.rev-item { aspect-ratio: 3/4; max-width: 420px; margin: 0 auto; width: 100%; }
+@media (min-width: 700px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 24px; }
+  .rev-item { max-width: none; }
+}
 @media (min-width: 1024px) {
-  .reviews-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px; }
+  .reviews-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 22px; }
   .rev-item { aspect-ratio: 3/4; max-width: none; }
 }
 @media (max-width: 640px) {
-  .reviews-wrap { padding: 0 32px; }
-  .rev-item { aspect-ratio: 3/4; max-width: 96vw; }
+  .reviews-wrap { padding: 0 28px; }
+}
+
+/* Hide bottom cartoon effigy on mobile */
+@media (max-width: 768px) {
+  .kawaii-effigy { display: none !important; }
 }
 
 /* shrink family gallery images 20% */
