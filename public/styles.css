@@ -473,3 +473,41 @@ footer .small { font-size: 0.75rem; color: color-mix(in oklab, var(--charcoal) 4
   .float-btn.float-wa span { display: inline; }
 }
 
+
+/* ============== Tour CTA bus & pill ============== */
+.tour-bus-cta {
+  display: flex; align-items: center; gap: 14px;
+  margin-top: 22px; padding: 14px 18px;
+  background: linear-gradient(90deg, #fff7e6, #ffe1d6);
+  border: 2px dashed #e94b3c; border-radius: 16px;
+  text-decoration: none; color: #3a2410;
+  box-shadow: 0 6px 18px rgba(233,75,60,.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.tour-bus-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(233,75,60,.25); }
+.tour-bus { width: 120px; flex: 0 0 120px; animation: bus-bounce 1.6s ease-in-out infinite; }
+.tour-bus svg { width: 100%; height: auto; display: block; }
+.tour-bus-text { display: flex; flex-direction: column; line-height: 1.3; }
+.tour-bus-text strong { font-size: 1.05rem; }
+.tour-bus-text span { font-size: .85rem; opacity: .8; }
+@keyframes bus-bounce {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(4px) translateY(-2px); }
+  50% { transform: translateX(0) translateY(0); }
+  75% { transform: translateX(-4px) translateY(-2px); }
+}
+
+.tour-badge { margin-top: 26px; }
+.tour-pill {
+  display: inline-block; padding: 12px 22px; border-radius: 999px;
+  background: linear-gradient(90deg, #e94b3c, #f4b400);
+  color: #fff; font-weight: 700; text-decoration: none;
+  box-shadow: 0 6px 18px rgba(233,75,60,.28);
+  transition: transform .2s ease;
+}
+.tour-pill:hover { transform: scale(1.04); }
+
+@media (max-width: 640px) {
+  .tour-bus { width: 90px; flex-basis: 90px; }
+  .tour-bus-text strong { font-size: .95rem; }
+}
